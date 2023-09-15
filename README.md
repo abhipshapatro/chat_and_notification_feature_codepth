@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Chat app where users can send and receive messages in real time. Users can create chat rooms, join existing ones, and exchange messages with other users in the same room.
+Chat app where users can send and receive messages in real time. Users can exchange messages with other users.
 
 ## Features
 
