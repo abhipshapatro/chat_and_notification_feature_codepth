@@ -11,12 +11,13 @@ const Message = ({ message }) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
 
-  const ephoc = (secs) => {
-    const output = new Date(secs * 1000);
-    const timestamp = new Date(output.toISOString());
-    const options = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' };
-    const formattedDate = timestamp.toLocaleDateString('en-US', options);
-    return formattedDate
+  const msgDate = (secs) => {
+    const date = new Date(secs * 1000);
+    const msgTime = new Date(date.toISOString());
+    const timeFormat = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' };
+    const outputDate = msgTime.toLocaleDateString('en-US', timeFormat);
+    // console.log(outputDate)
+    return outputDate
   }
 
 
@@ -29,7 +30,7 @@ const Message = ({ message }) => {
             : data.user.photoURL
         } alt="" />
         <span>
-          {ephoc(message.date)}
+          {msgDate(message.date.seconds)}
         </span>
       </div>
       <div className="messageContent">
