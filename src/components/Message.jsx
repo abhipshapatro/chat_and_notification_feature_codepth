@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef } from 'react'
-
 import { AuthContext } from '../context/AuthContext'
 import { ChatContext } from '../context/ChatContext'
 
@@ -17,9 +16,8 @@ const Message = ({ message }) => {
     const timeFormat = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' };
     const outputDate = msgTime.toLocaleDateString('en-US', timeFormat);
     // console.log(outputDate)
-    return outputDate
+    return outputDate;
   }
-
 
   return (
     <div ref={ref} className={`message ${message.senderId === currentUser.uid && "owner"}`}>
@@ -40,5 +38,4 @@ const Message = ({ message }) => {
     </div>
   )
 }
-
 export default Message
